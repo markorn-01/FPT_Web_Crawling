@@ -19,6 +19,8 @@ public class CSVExporter {
     public void writeCSV() throws IOException{
         List<String[]> info = createCsvDataSimple();
         try (CSVWriter writer = new CSVWriter(new FileWriter("Products.csv"))) {
+            String[] title = {"Product name", "Price"};
+            writer.writeNext(title);
             writer.writeAll(info);
         }
     }
