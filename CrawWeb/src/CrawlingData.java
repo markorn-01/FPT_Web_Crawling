@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -40,16 +41,20 @@ public class CrawlingData {
             System.out.println(pair.getName() + ": " + pair.getPrice());
         }
     }
-
+    public static void exportCSV(List<Pair> productInfo) throws IOException{
+        CSVExporter csv = new CSVExporter(productInfo);
+        csv.writeCSV();
+    }
     public static void main(String[] args) throws Exception {
         String linkIphone = "https://fptshop.com.vn/apple/iphone";
         String linkMacbook = "https://fptshop.com.vn/apple/macbook";
         String linkIpad = "https://fptshop.com.vn/apple/ipad";
         List<Pair> list = new ArrayList<Pair>();
         crawlData(linkIphone, list);
-        //crawlData(linkMacbook, list);
-        //crawlData(linkIpad, list);
+        crawlData(linkMacbook, list);
+        crawlData(linkIpad, list);
         sorting(list);
         showData(list);
+        exportCSV(list);
     }
 }

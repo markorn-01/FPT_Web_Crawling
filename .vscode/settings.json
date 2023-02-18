@@ -1,6 +1,12 @@
 {
     "java.project.referencedLibraries": [
         "/Users/minhn/Documents/Programming/dependencies/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar",
-        "CrawWeb/lib/jsoup-1.15.4.jar"
+        "CrawWeb/lib/jsoup-1.15.4.jar",
+        "CrawWeb/lib/commons-beanutils-1.9.3.jar",
+        "CrawWeb/lib/commons-collections-3.2.2.jar",
+        "CrawWeb/lib/commons-lang3-3.6.jar",
+        "CrawWeb/lib/commons-logging-1.2.jar",
+        "CrawWeb/lib/commons-text-1.1.jar",
+        "CrawWeb/lib/opencsv-4.1.jar"
     ]
 }
