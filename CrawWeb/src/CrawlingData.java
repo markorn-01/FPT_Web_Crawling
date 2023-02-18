@@ -38,9 +38,11 @@ public class CrawlingData {
     public static void main(String[] args) throws Exception {
         String linkIphone = "https://fptshop.com.vn/apple/iphone";
         String linkMacbook = "https://fptshop.com.vn/apple/macbook";
+        String linkIpad = "https://fptshop.com.vn/apple/ipad";
         List<Pair> list = new ArrayList<Pair>();
-        crawlData(linkIphone, list);
-        crawlData(linkMacbook, list);
+         crawlData(linkIphone, list);
+        //crawlData(linkMacbook, list);
+        //crawlData(linkIpad, list);
         sorting(list);
         for (Pair pair : list) {
             System.out.println(pair.getName() + ": " + pair.getPrice());
