@@ -36,7 +36,6 @@ public class CrawlingData {
         });
     }
     public static void showData(List<Pair> productInfo){
-        sorting(productInfo);
         for (Pair pair : productInfo) {
             System.out.println(pair.getName() + ": " + pair.getPrice());
         }
@@ -50,6 +49,7 @@ public class CrawlingData {
         crawlData(linkIphone, list);
         //crawlData(linkMacbook, list);
         //crawlData(linkIpad, list);
+        sorting(list);
         showData(list);
     }
 }
