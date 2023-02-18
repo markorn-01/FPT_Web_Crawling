@@ -47,8 +47,8 @@ public class CrawlingData {
         String linkIpad = "https://fptshop.com.vn/apple/ipad";
         List<Pair> list = new ArrayList<Pair>();
         crawlData(linkIphone, list);
-        //crawlData(linkMacbook, list);
-        //crawlData(linkIpad, list);
+        crawlData(linkMacbook, list);
+        crawlData(linkIpad, list);
         sorting(list);
         showData(list);
     }
