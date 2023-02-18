@@ -25,7 +25,7 @@ public class CrawlingData {
         }
         
     }
-    public static void sorting(List<Pair> productInfo){
+    public static void sortData(List<Pair> productInfo){
         Collections.sort(productInfo, new Comparator<Pair>() {
             @Override
             public int compare(Pair o1, Pair o2) {
@@ -53,7 +53,7 @@ public class CrawlingData {
         crawlData(linkIphone, list);
         crawlData(linkMacbook, list);
         crawlData(linkIpad, list);
-        sorting(list);
+        sortData(list);
         showData(list);
         exportCSV(list);
     }
