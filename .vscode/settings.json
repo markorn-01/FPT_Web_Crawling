@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "/Users/minhn/Documents/Programming/dependencies/mysql-connector-j-8.0.32/mysql-connector-j-8.0.32.jar",
+        "CrawWeb/lib/jsoup-1.15.4.jar"
+    ]
+}
