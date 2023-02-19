@@ -41,9 +41,15 @@ public class CrawlingData {
             System.out.println(pair.getName() + ": " + pair.getPrice());
         }
     }
-    public static void exportCSV(List<Pair> productInfo) throws IOException{
-        CSVExporter csv = new CSVExporter(productInfo);
-        csv.writeCSV();
+    public static void exportCSV(List<Pair> productInfo, String filename) throws IOException{
+        List<String[]> list = new ArrayList<>();
+        for (Pair info: productInfo){
+            String[] record = {info.getName(), String.valueOf(info.getPrice())};
+            list.add(record);
+        }
+        CSVExporter csv = new CSVExporter(list);     
+        String[] title = {"Product name", "Price"};
+        csv.writeCSV(title, filename);
     }
     public static void main(String[] args) throws Exception {
         String linkIphone = "https://fptshop.com.vn/apple/iphone";
@@ -55,6 +61,6 @@ public class CrawlingData {
         crawlData(linkIpad, list);
         sortData(list);
         showData(list);
-        exportCSV(list);
+        exportCSV(list, "Products");
     }
 }

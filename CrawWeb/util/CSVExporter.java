@@ -4,22 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import com.opencsv.CSVWriter;
 public class CSVExporter {
-    private List<Pair> data;
-    public CSVExporter(List<Pair> data){
+    private List<String[]> data;
+    public CSVExporter(List<String[]> data){
         this.data = data;
     }
     public List<String[]> createCsvDataSimple() {
-        List<String[]> list = new ArrayList<>();
-        for (Pair info: data){
-            String[] record = {info.getName(), String.valueOf(info.getPrice())};
-            list.add(record);
-        }
-        return list;
+        return this.data;
     }
-    public void writeCSV() throws IOException{
+    public void writeCSV(String[] title, String filename) throws IOException{
         List<String[]> info = createCsvDataSimple();
-        try (CSVWriter writer = new CSVWriter(new FileWriter("Products.csv"))) {
-            String[] title = {"Product name", "Price"};
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filename + ".csv"))) {
             writer.writeNext(title);
             writer.writeAll(info);
         }
